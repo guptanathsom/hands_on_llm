@@ -2,7 +2,7 @@ from sentence_transformers import SentenceTransformer
 from datasets import load_dataset
 from sklearn.linear_model import LogisticRegression
 
-from a_classifier import evaluate_performance
+from utils import evaluate_performance
 
 # Load dataset
 data = load_dataset("cornell-movie-review-data/rotten_tomatoes")

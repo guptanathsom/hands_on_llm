@@ -5,6 +5,7 @@ from datasets import load_dataset
 from transformers import pipeline
 from transformers.pipelines.pt_utils import KeyDataset
 from sklearn.metrics import classification_report
+from utils import evaluate_performance
 
 # 1. Load the dataset
 data = load_dataset("cornell-movie-review-data/rotten_tomatoes")
@@ -35,12 +36,5 @@ for output in tqdm(pipe(KeyDataset(data["test"], "text")), total=len(data["test"
     y_pred.append(assignment)
 
 # 5. Evaluate performance
-def evaluate_performance(y_true, y_pred):
-    """Create and print the classification report"""
-    performance = classification_report(
-        y_true, y_pred,
-        target_names=["Negative Review", "Positive Review"]
-    )
-    print(performance)
 
 evaluate_performance(data["test"]["label"], y_pred)

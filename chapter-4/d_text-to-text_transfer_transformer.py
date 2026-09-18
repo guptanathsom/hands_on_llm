@@ -3,7 +3,7 @@ from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from tqdm import tqdm
 
-from a_classifier import evaluate_performance
+from utils import evaluate_performance
 
 # Load dataset
 data = load_dataset("cornell-movie-review-data/rotten_tomatoes")

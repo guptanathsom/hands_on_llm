@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer
 from datasets import load_dataset
 from sklearn.metrics.pairwise import cosine_similarity
 
-from a_classifier import evaluate_performance
+from utils import evaluate_performance
 
 # Load dataset
 data = load_dataset("cornell-movie-review-data/rotten_tomatoes")
